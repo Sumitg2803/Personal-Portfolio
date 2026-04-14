@@ -3,7 +3,7 @@
    ========================================================================= */
 
 // Deployment Config: Switch this to your live backend URL (e.g. https://portfolio-backend.vercel.app) once deployed!
-window.API_BASE_URL = 'https://personal-portfolio-kappa-lilac.vercel.app/';
+window.API_BASE_URL = 'https://personal-portfolio-kappa-lilac.vercel.app';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Preloader Logic
