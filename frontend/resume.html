@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Sumit Gaikwad</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Common Styles -->
+    <link href="common.css" rel="stylesheet">
+    
+    <style>
+        body { padding-top: 100px; }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resume-card {
+            background: rgba(25 insertions 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(29, 128, 232, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .resume-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resume-icon {
+            font-size: 6rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .cv-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem auto;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .cv-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cv-features li:last-child {
+            border: none;
+        }
+
+        .cv-features i {
+            color: #00d2ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link active">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container pb-5">
+        <div class="text-center mb-5 gsap-fade-in">
+            <h1 class="gradient-text mb-3">Resume</h1>
+            <p class="text-muted">Download my full professional background</p>
+        </div>
+
+        <div class="resume-container">
+            <div class="glass-panel resume-card gsap-fade-in">
+                <div class="resume-content">
+                    <div class="resume-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    
+                    <h2 class="mb-3 text-white">Curriculum Vitae</h2>
+                    <p class="text-muted mb-4">A complete overview of my education, projects, skills, and certifications curated into a printable PDF document.</p>
+                    
+                    <ul class="cv-features">
+                        <li><i class="fas fa-check-circle"></i> Clean, one-page layout</li>
+                        <li><i class="fas fa-check-circle"></i> Optimized for ATS parsing</li>
+                        <li><i class="fas fa-check-circle"></i> Direct contact links embedded</li>
+                    </ul>
+
+                    <a href="Files/Sumit_Gaikwad_Resume.pdf" target="_blank" class="btn btn-premium mt-4 d-inline-flex align-items-center gap-2">
+                        Download Résumé <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center mt-5">
+        <div class="container">
+            <p>&copy; <span class="copyright-year">2026</span> Sumit Gaikwad | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="common.js"></script>
+</body>
+</html>

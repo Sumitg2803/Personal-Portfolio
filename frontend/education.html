@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Sumit Gaikwad</title>
+    
+    <!-- Bootstrap CSS for Navbar consistency -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Global CSS (Navbar, custom cursor, fonts) -->
+    <link href="common.css" rel="stylesheet">
+    
+    <!-- User's specific education CSS (merged from snippet) -->
+    <link href="education.css" rel="stylesheet">
+</head>
+<body class="education-body">
+
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation (Using existing common syntax to match the rest of the dark theme website) -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link active">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (User's Exact Structure) -->
+    <main class="education-section">
+        <div class="edu-container">
+            <h1 class="page-title fade-in">My Education Journey</h1>
+            
+            <!-- Animated Timeline -->
+            <div class="timeline-container fade-in">
+                <div class="timeline-path">
+                    <div class="path-line"></div>
+                    <div class="walking-character" id="walkingCharacter">
+                        <div class="character">
+                            <div class="head"></div>
+                            <div class="body"></div>
+                            <div class="arm left-arm"></div>
+                            <div class="arm right-arm"></div>
+                            <div class="leg left-leg"></div>
+                            <div class="leg right-leg"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-stage="home">
+                        <div class="milestone-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="milestone-label">Home</div>
+                    </div>
+                    
+                    <div class="milestone" data-stage="school">
+                        <div class="milestone-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="milestone-label">School</div>
+                    </div>
+                    
+                    <div class="milestone" data-stage="college">
+                        <div class="milestone-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="milestone-label">College</div>
+                    </div>
+                    
+                    <div class="milestone" data-stage="university">
+                        <div class="milestone-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="milestone-label">University</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Cards -->
+            <div class="education-cards">
+                <div class="education-card slide-in-left">
+                    <div class="card-image">
+                        <img src="Images/VN_School.avif" alt="Vidya Niketan School">
+                    </div>
+                    <div class="card-content">
+                        <h3>Vidya Niketan English Medium School</h3>
+                        <p class="institution">Tata Motors Education Employees Trust</p>
+                        <div class="education-details">
+                            <div class="edu-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>LKG to 10th Grade</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>80% in SSC</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>Primary & Secondary Education</span>
+                            </div>
+                        </div>
+                        <div class="achievement-badge">
+                            <span>SSC Graduate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card slide-in-right">
+                    <div class="card-image">
+                        <img src="Images/DYP_Image.jpg" alt="D.Y. Patil Junior College">
+                    </div>
+                    <div class="card-content">
+                        <h3>D.Y. Patil Junior College</h3>
+                        <p class="institution">Arts, Commerce, Science (Akurdi)</p>
+                        <div class="education-details">
+                            <div class="edu-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>11th & 12th Grade</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>75% in HSC</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-flask"></i>
+                                <span>Science Stream - PCM</span>
+                            </div>
+                        </div>
+                        <div class="achievement-badge">
+                            <span>HSC Graduate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card slide-in-left featured">
+                    <div class="card-image">
+                        <img src="Images/PCU.jpg" alt="Pimpri Chinchwad University">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pimpri Chinchwad University</h3>
+                        <p class="institution">Sate, Maval</p>
+                        <div class="education-details">
+                            <div class="edu-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>BTech CSE (Third Year)</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>CGPA: 8.8</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Computer Science & Engineering</span>
+                            </div>
+                            <div class="edu-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Currently Pursuing</span>
+                            </div>
+                        </div>
+                        <div class="achievement-badge current">
+                            <span>Current Student</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section fade-in">
+                <h2>Academic Highlights</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8.8</div>
+                        <div class="stat-label">Current CGPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">SSC Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">HSC Score</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Years of Education</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Container (Mapped to global styles) -->
+    <footer class="footer-container text-center mt-5" style="border-top: none;">
+        <div class="container">
+            <p class="text-white">&copy; <span class="copyright-year">2026</span> Sumit Gaikwad | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Global Script (Cursor & copyright) -->
+    <script src="common.js"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        // Walking character animation
+        function startWalkingAnimation() {
+            const character = document.getElementById('walkingCharacter');
+            if(!character) return;
+
+            const milestones = document.querySelectorAll('.milestone');
+            
+            let currentMilestone = 0;
+            const totalMilestones = milestones.length;
+            
+            function moveToNextMilestone() {
+                if (currentMilestone < totalMilestones) {
+                    const progress = (currentMilestone / (totalMilestones - 1)) * 100;
+                    character.style.left = progress + '%';
+                    
+                    // Scale up character as it progresses
+                    const scale = 1 + (currentMilestone * 0.2);
+                    character.style.transform = `scale(${scale})`;
+                    
+                    // Activate current milestone
+                    milestones[currentMilestone].classList.add('active');
+                    
+                    currentMilestone++;
+                    
+                    if (currentMilestone < totalMilestones) {
+                        setTimeout(moveToNextMilestone, 2000);
+                    } else {
+                        // Reset and restart
+                        setTimeout(() => {
+                            currentMilestone = 0;
+                            milestones.forEach(m => m.classList.remove('active'));
+                            character.style.left = '0%';
+                            character.style.transform = 'scale(1)';
+                            setTimeout(moveToNextMilestone, 1000);
+                        }, 3000);
+                    }
+                }
+            }
+            
+            moveToNextMilestone();
+        }
+
+        // Start animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(startWalkingAnimation, 1000);
+            
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

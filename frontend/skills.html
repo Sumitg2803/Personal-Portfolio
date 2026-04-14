@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Sumit Gaikwad</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Common Styles -->
+    <link href="common.css" rel="stylesheet">
+    
+    <style>
+        body { padding-top: 100px; }
+        
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title i {
+            background: rgba(29, 128, 232, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .progress-line {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .progress-line span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, #1d80e8, #00d2ff);
+            border-radius: 10px;
+            width: 0; /* Animation target */
+            position: relative;
+        }
+
+        .progress-line span::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5));
+            border-radius: 10px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .tool-card:hover {
+            background: rgba(29, 128, 232, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(29, 128, 232, 0.4);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .tool-card:hover .tool-icon { color: var(--accent-color); }
+        .tool-name { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link active">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container pb-5">
+        <div class="text-center mb-5 gsap-fade-in">
+            <h1 class="gradient-text mb-3">Professional Skills</h1>
+            <p class="text-muted">My technical toolkit and proficiency levels</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <!-- Languages -->
+                <div class="glass-panel p-4 mb-4 gsap-fade-in">
+                    <h3 class="category-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                    
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Python</span> <span>90%</span></div>
+                        <div class="progress-line"><span data-width="90%" style="background: linear-gradient(90deg, #3776ab, #00d2ff);"></span></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
+                        <div class="progress-line"><span data-width="75%" style="background: linear-gradient(90deg, #f7df1e, #ffca28);"></span></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>C/C++</span> <span>80%</span></div>
+                        <div class="progress-line"><span data-width="80%"></span></div>
+                    </div>
+                    <div class="skill-bar-container mb-0">
+                        <div class="skill-info"><span>Java</span> <span>70%</span></div>
+                        <div class="progress-line"><span data-width="70%" style="background: linear-gradient(90deg, #e32d26, #ff7a59);"></span></div>
+                    </div>
+                </div>
+
+                <!-- Web / Mobile -->
+                <div class="glass-panel p-4 gsap-fade-in">
+                    <h3 class="category-title"><i class="fas fa-globe"></i> Web & Mobile Dev</h3>
+                    
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>HTML5/CSS3</span> <span>95%</span></div>
+                        <div class="progress-line"><span data-width="95%" style="background: linear-gradient(90deg, #e34c26, #f06529);"></span></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-info"><span>Bootstrap / Tailwind</span> <span>85%</span></div>
+                        <div class="progress-line"><span data-width="85%" style="background: linear-gradient(90deg, #7952b3, #00d2ff);"></span></div>
+                    </div>
+                    <div class="skill-bar-container mb-0">
+                        <div class="skill-info"><span>React Native</span> <span>60%</span></div>
+                        <div class="progress-line"><span data-width="60%" style="background: linear-gradient(90deg, #61dafb, #00d2ff);"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hardware & Tools Grid -->
+            <div class="col-lg-6">
+                <div class="glass-panel p-4 h-100 gsap-fade-in">
+                    <h3 class="category-title"><i class="fas fa-wrench"></i> Databases & Tools</h3>
+                    
+                    <div class="row g-3">
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fab fa-git-alt tool-icon"></i>
+                                <div class="tool-name">Git</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fab fa-github tool-icon"></i>
+                                <div class="tool-name">GitHub</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fas fa-database tool-icon"></i>
+                                <div class="tool-name">MySQL</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fas fa-server tool-icon"></i>
+                                <div class="tool-name">Firebase</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fas fa-laptop-code tool-icon"></i>
+                                <div class="tool-name">VS Code</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <div class="tool-card">
+                                <i class="fab fa-figma tool-icon"></i>
+                                <div class="tool-name">Figma</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center mt-5">
+        <div class="container">
+            <p>&copy; <span class="copyright-year">2026</span> Sumit Gaikwad | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate progress bars after slight delay
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.progress-line span');
+                bars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    gsap.to(bar, {
+                        width: width,
+                        duration: 1.5,
+                        ease: "power2.out"
+                    });
+                });
+            }, 600);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit Gaikwad - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Common Styles -->
+    <link href="common.css" rel="stylesheet">
+    
+    <style>
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .profile-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-color), transparent);
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0.7;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { opacity: 0.5; filter: blur(10px); }
+            to { opacity: 0.8; filter: blur(20px); }
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .hero-name {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .floating-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: -2;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- CINEMATIC PRELOADER -->
+    <div id="intro-loader">
+        <button id="skipBtn" class="skip-btn">Skip Intro <i class="fas fa-forward"></i></button>
+        <div class="animation01">
+            <div class="line_content line_content01">
+                <div class="line_wrapper line_wrapper01">
+                    <div class="line01"></div>
+                    <div class="line02"></div>
+                </div>
+            </div>
+            <div class="line_content line_content02">
+                <div class="line_wrapper line_wrapper02">
+                    <div class="line02"></div>
+                    <div class="line01"></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation02">
+            <div class="square">
+                <span class="square_item square_item01"></span>
+                <span class="square_item square_item02"></span>
+                <span class="square_item square_item03"></span>
+                <span class="square_item square_item04"></span>
+                <span class="square_item square_item05"></span>
+                <span class="square_item square_item06"></span>
+                <span class="square_item square_item07"></span>
+                <span class="square_item square_item08"></span>
+                <span class="circle_item01"></span>
+                <span class="circle_item02"></span>
+                <span class="circle_item03"></span>
+                <span class="circle_item04"></span>
+                <span class="circle_item05"></span>
+                <span class="circle_item06"></span>
+                <span class="circle_item01_1"></span>
+                <span class="circle_item02_2"></span>
+                <span class="circle_item03_3"></span>
+                <span class="circle_item04_4"></span>
+                <span class="circle_item05_5"></span>
+                <span class="circle_item06_6"></span>
+            </div>
+        </div>
+        <div class="animation03">
+            <!-- 100 dynamically generated divs visually represented by pure CSS in common.css overflow -->
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="animation04">
+            <div class="name_plate"></div>
+            <div class="name">Sumit G.</div>
+        </div>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="hero-section text-center">
+        <!-- Floating dots background -->
+        <div class="floating-bg" id="particles-js"></div>
+
+        <div class="container z-1 relative">
+            <div class="profile-wrapper gsap-fade-in">
+                <img src="Images/photo.jpg" alt="Sumit Gaikwad" class="profile-img">
+            </div>
+            <h1 class="hero-name gradient-text gsap-fade-in">Sumit Gaikwad</h1>
+            <p class="hero-tagline gsap-fade-in">BTech CSE Student | Tech Enthusiast | Passionate Learner</p>
+            <div class="hero-intro gsap-fade-in">
+                <p>I'm currently pursuing BTech in Computer Science and Engineering at Pimpri Chinchwad University, Sate, Maval. Passionate about coding, cybersecurity, web development, and long-term growth through continuous learning.</p>
+            </div>
+            <div class="d-flex justify-content-center gap-4 mt-4 gsap-fade-in">
+                <a href="about.html" class="btn btn-premium">Learn More</a>
+                <a href="contact.html" class="btn btn-outline-premium">Get in Touch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Particles.js for a subtle premium moving background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // Init Particles
+        if(typeof particlesJS !== 'undefined') {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#1d80e8" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.3, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#1d80e8", "opacity": 0.1, "width": 1 },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "resize": true },
+                    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+                },
+                "retina_detect": true
+            });
+        }
+    </script>
+</body>
+</html>

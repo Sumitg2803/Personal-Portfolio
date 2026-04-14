@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sumit Gaikwad</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Common Styles -->
+    <link href="common.css" rel="stylesheet">
+    
+    <style>
+        body { padding-top: 100px; }
+        
+        .admin-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+
+        .table-custom {
+            color: #fff;
+            vertical-align: middle;
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .table-custom th {
+            background: rgba(29, 128, 232, 0.2);
+            color: var(--accent-color);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-color);
+            padding: 1rem;
+        }
+
+        .table-custom td {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .table-custom tbody tr {
+            transition: 0.3s;
+        }
+
+        .table-custom tbody tr:hover td {
+            background: rgba(29, 128, 232, 0.1);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: rgba(255, 202, 40, 0.2);
+            color: #ffca28;
+            border: 1px solid rgba(255, 202, 40, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <!-- Admin Link specific to this page -->
+                    <li class="nav-item"><a href="admin.html" class="nav-link active">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container pb-5">
+        <div class="text-center mb-5 gsap-fade-in">
+            <h1 class="gradient-text mb-3">Admin Dashboard</h1>
+            <p class="text-muted">Viewing latest contact submissions</p>
+        </div>
+
+        <div class="row">
+            <div class="col-12 gsap-fade-in">
+                <div class="glass-panel admin-card">
+                    <h3 class="mb-4 text-white d-flex align-items-center justify-content-between">
+                        Contact Messages
+                        <button class="btn btn-outline-premium btn-sm" onclick="fetchMessages()">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </h3>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-custom table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date/Time</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messages-table-body">
+                                <tr>
+                                    <td colspan="5" class="text-center py-4">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center mt-5">
+        <div class="container">
+            <p>&copy; <span class="copyright-year">2026</span> Sumit Gaikwad | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="common.js"></script>
+    
+    <script>
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        let adminPassword = null;
+
+        function fetchMessages() {
+            if (!adminPassword) {
+                adminPassword = prompt("Authentication Required: Please enter the Admin Password.");
+                if (!adminPassword) return; // User cancelled
+            }
+
+            const tbody = document.getElementById('messages-table-body');
+            tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4"><div class="spinner-border text-primary" role="status"></div></td></tr>`;
+
+            const apiUrl = window.API_BASE_URL ? `${window.API_BASE_URL}/messages` : 'http://localhost:5000/messages';
+
+            fetch(apiUrl, {
+                headers: {
+                    'x-admin-key': adminPassword
+                }
+            })
+                .then(response => {
+                    if (response.status === 401) {
+                        adminPassword = null; // reset password on failure
+                        throw new Error('Unauthorized: Incorrect Password');
+                    }
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-4">No messages found.</td></tr>';
+                        return;
+                    }
+
+                    tbody.innerHTML = '';
+                    data.forEach(msg => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td><span class="status-badge"><i class="fas fa-clock me-1"></i> ${formatDate(msg.time)}</span></td>
+                            <td class="fw-bold">${msg.name}</td>
+                            <td><a href="mailto:${msg.email}" class="text-decoration-none text-info">${msg.email}</a></td>
+                            <td><a href="tel:${msg.phone}" class="text-decoration-none text-info">${msg.phone}</a></td>
+                            <td>${msg.message.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    tbody.innerHTML = `<tr><td colspan="5" class="text-center text-danger py-4">
+                        <i class="fas fa-exclamation-triangle fa-2x mb-2"></i><br>
+                        ${error.message === 'Unauthorized: Incorrect Password' ? 'Incorrect Administrator Password provided.' : 'Failed to load data. Is the backend running?'}
+                    </td></tr>`;
+                });
+        }
+
+        // Fetch on load
+        document.addEventListener('DOMContentLoaded', fetchMessages);
+    </script>
+</body>
+</html>

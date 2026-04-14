@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sumit Gaikwad</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Common Styles -->
+    <link href="common.css" rel="stylesheet">
+    
+    <style>
+        body { padding-top: 100px; }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-content h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .tech-tag.python { background: rgba(55, 118, 171, 0.2); color: #3776ab; border: 1px solid rgba(55, 118, 171, 0.4); }
+        .tech-tag.mysql { background: rgba(242, 145, 17, 0.2); color: #f29111; border: 1px solid rgba(242, 145, 17, 0.4); }
+        .tech-tag.gui { background: rgba(255, 222, 87, 0.2); color: #FFD43B; border: 1px solid rgba(255, 222, 87, 0.4); }
+        .tech-tag.react { background: rgba(97, 218, 251, 0.2); color: #61dafb; border: 1px solid rgba(97, 218, 251, 0.4); }
+        .tech-tag.firebase { background: rgba(255, 202, 40, 0.2); color: #ffca28; border: 1px solid rgba(255, 202, 40, 0.4); }
+        .tech-tag.js { background: rgba(247, 223, 30, 0.2); color: #f7df1e; border: 1px solid rgba(247, 223, 30, 0.4); }
+
+        .key-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .key-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+        .key-features li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .project-gallery {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        .project-icon {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.8);
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sumit Gaikwad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li class="nav-item"><a href="certificates.html" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container pb-5">
+        <div class="text-center mb-5 gsap-fade-in">
+            <h1 class="gradient-text mb-3">Projects</h1>
+            <p class="text-muted">Showcasing my passion for coding and development</p>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project-card gsap-fade-in">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="project-content">
+                        <h3>Student Management System</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag mysql">MySQL</span>
+                            <span class="tech-tag gui">CustomTkinter</span>
+                        </div>
+                        <p class="project-description">A comprehensive desktop application designed to streamline student data management, fee tracking, and academic records.</p>
+                        <ul class="key-features">
+                            <li>Secure Login system with different access levels</li>
+                            <li>Add, Update, Delete, and Search student records</li>
+                            <li>Fee management with receipt generation</li>
+                            <li>Real-time database integration using MySQL</li>
+                            <li>Modern UI with dark/light mode support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="project-gallery">
+                        <img src="Images/DB_project interface.png" alt="Student Management Interface" class="screenshot">
+                        <img src="Images/Database_student.png" alt="Database Structure" class="screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card gsap-fade-in">
+            <div class="row g-0 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="project-content">
+                        <h3>Upcoming Mobile App Project</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag react">React Native</span>
+                            <span class="tech-tag firebase">Firebase</span>
+                        </div>
+                        <p class="project-description">Currently developing a cross-platform mobile application focusing on real-time data synchronization and an intuitive user interface.</p>
+                        <ul class="key-features">
+                            <li>Cross-platform deployment (iOS & Android)</li>
+                            <li>Real-time database and user authentication</li>
+                            <li>Push notifications and local storage</li>
+                            <li>Responsive layout with smooth animations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="project-gallery text-center d-flex align-items-center h-100">
+                        <div class="project-icon bg-gradient p-5 rounded-circle" style="background: linear-gradient(135deg, #222, #111); width: 150px; height: 150px; display: flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card gsap-fade-in">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="project-content">
+                        <h3>E-Commerce Website</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag js">JavaScript</span>
+                            <span class="tech-tag python">HTML/CSS</span>
+                        </div>
+                        <p class="project-description">A fully functional multi-page e-commerce platform with dynamic cart capabilities and elegant responsive design.</p>
+                        <ul class="key-features">
+                            <li>Interactive product catalogs</li>
+                            <li>Dynamic shopping cart integration</li>
+                            <li>Responsive multi-page layout</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="project-gallery">
+                        <img src="Images/Web_homepage.png" alt="E-Commerce Home" class="screenshot">
+                        <img src="Images/Web_product catalog.png" alt="Product Catalog" class="screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container text-center mt-5">
+        <div class="container">
+            <p>&copy; <span class="copyright-year">2026</span> Sumit Gaikwad | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="common.js"></script>
+</body>
+</html>
