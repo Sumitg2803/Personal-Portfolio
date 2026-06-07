@@ -159,5 +159,14 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 
+app.get('/env-check', (req, res) => {
+    res.json({
+        mongoExists: !!process.env.MONGO_URI,
+        mongoLength: process.env.MONGO_URI
+            ? process.env.MONGO_URI.length
+            : 0
+    });
+});
+
 // Export for Vercel
 module.exports = app;
