@@ -7,14 +7,23 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// Specific origin CORS — fixes 'credentials + wildcard' conflict from vercel.json headers
+app.use(cors({
+    origin: [
+        'https://sg-personal-portfolio.vercel.app',  // Actual frontend deployment
+        'http://localhost:5500',
+        'http://127.0.0.1:5500',
+        'http://localhost:3000'
+    ],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'x-admin-key']
+}));
+app.options('*', cors()); // Handle preflight
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// Note: useNewUrlParser & useUnifiedTopology are deprecated and removed in Mongoose 8+
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('✅ Connected to MongoDB Atlas (portfolioDB)'))
 .catch(err => console.error('❌ MongoDB Connection Error:', err));
 

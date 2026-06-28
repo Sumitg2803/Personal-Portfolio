@@ -2,7 +2,9 @@
    COMMON JS (Preloader Logic, Custom Cursor, Scroll Animation Init)
    ========================================================================= */
 
-// Deployment Config: Switch this to your live backend URL (e.g. https://portfolio-backend.vercel.app) once deployed!
+// ⚠️  IMPORTANT: This MUST be the BACKEND Vercel deployment URL (not the frontend URL!)
+// Backend: https://personal-portfolio-kappa-lilac.vercel.app  (Express + MongoDB)
+// Frontend: https://sg-personal-portfolio.vercel.app           (Static HTML only)
 window.API_BASE_URL = 'https://personal-portfolio-kappa-lilac.vercel.app';
 
 document.addEventListener('DOMContentLoaded', () => {

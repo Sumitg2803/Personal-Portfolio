@@ -275,8 +275,8 @@
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value,
-                time: new Date().toISOString()
+                message: document.getElementById('message').value
+                // 'time' is intentionally omitted — the server auto-generates it via Date.now()
             };
 
             // 1. Send to EmailJS
@@ -297,14 +297,25 @@
                 },
                 body: JSON.stringify(formData)
             })
-            .then(response => {
-                if(!response.ok) throw new Error('Backend rejection');
-                alert('Thank you! Your message has been sent successfully.');
+            .then(async response => {
+                if (!response.ok) {
+                    // Surface the actual server error message, not just a generic string
+                    let errMsg = 'Backend rejected the request';
+                    try {
+                        const errData = await response.json();
+                        errMsg = errData.error || errMsg;
+                    } catch (_) {}
+                    throw new Error(errMsg);
+                }
+                return response.json();
+            })
+            .then(() => {
+                alert('✅ Thank you! Your message has been sent and saved successfully.');
                 document.getElementById('contactForm').reset();
             })
             .catch(error => {
                 console.error('Backend save error:', error);
-                alert('Message sent but there was an error saving to database.');
+                alert('⚠️ Your email was sent but there was an error saving to database: ' + error.message);
             })
             .finally(() => {
                 submitBtn.innerHTML = originalText;

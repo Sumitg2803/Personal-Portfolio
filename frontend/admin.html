@@ -149,6 +149,16 @@
             return new Date(dateString).toLocaleDateString('en-US', options);
         }
 
+        // XSS protection helper
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
         let adminPassword = null;
 
         function fetchMessages() {
@@ -186,9 +196,9 @@
                         const tr = document.createElement('tr');
                         tr.innerHTML = `
                             <td><span class="status-badge"><i class="fas fa-clock me-1"></i> ${formatDate(msg.time)}</span></td>
-                            <td class="fw-bold">${msg.name}</td>
-                            <td><a href="mailto:${msg.email}" class="text-decoration-none text-info">${msg.email}</a></td>
-                            <td><a href="tel:${msg.phone}" class="text-decoration-none text-info">${msg.phone}</a></td>
+                            <td class="fw-bold">${escapeHtml(msg.name)}</td>
+                            <td><a href="mailto:${escapeHtml(msg.email)}" class="text-decoration-none text-info">${escapeHtml(msg.email)}</a></td>
+                            <td><a href="tel:${escapeHtml(msg.phone)}" class="text-decoration-none text-info">${escapeHtml(msg.phone)}</a></td>
                             <td>${msg.message.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</td>
                         `;
                         tbody.appendChild(tr);
